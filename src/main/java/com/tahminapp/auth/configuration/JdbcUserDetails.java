@@ -1,8 +1,8 @@
-package com.aak.configuration;
+package com.tahminapp.auth.configuration;
 
-import com.aak.domain.User;
-import com.aak.domain.UserStatus;
-import com.aak.repository.UserRepository;
+import com.tahminapp.auth.domain.User;
+import com.tahminapp.auth.domain.UserStatus;
+import com.tahminapp.auth.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

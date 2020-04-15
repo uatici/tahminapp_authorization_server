@@ -1,6 +1,6 @@
-package com.aak.converter;
+package com.tahminapp.auth.converter;
 
-import com.aak.domain.UserStatus;
+import com.tahminapp.auth.domain.UserStatus;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

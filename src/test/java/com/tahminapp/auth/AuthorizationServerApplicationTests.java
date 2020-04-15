@@ -1,4 +1,4 @@
-package com.aak;
+package com.tahminapp.auth;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

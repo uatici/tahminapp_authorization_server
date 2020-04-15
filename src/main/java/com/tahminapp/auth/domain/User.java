@@ -1,4 +1,4 @@
-package com.aak.domain;
+package com.tahminapp.auth.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

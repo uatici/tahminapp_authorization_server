@@ -1,6 +1,6 @@
-package com.aak.repository;
+package com.tahminapp.auth.repository;
 
-import com.aak.domain.User;
+import com.tahminapp.auth.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

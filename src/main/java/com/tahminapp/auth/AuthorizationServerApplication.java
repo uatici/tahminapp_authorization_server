@@ -1,4 +1,4 @@
-package com.aak;
+package com.tahminapp.auth;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.boot.SpringApplication;

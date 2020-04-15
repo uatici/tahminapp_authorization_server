@@ -1,4 +1,4 @@
-package com.aak.domain;
+package com.tahminapp.auth.domain;
 
 public enum UserStatus {
     ENABLE(1), DISABLE(2), VERIFY(3);

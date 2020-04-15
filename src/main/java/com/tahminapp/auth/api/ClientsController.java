@@ -1,7 +1,7 @@
-package com.aak.api;
+package com.tahminapp.auth.api;
 
-import com.aak.configuration.AuthorityPropertyEditor;
-import com.aak.configuration.SplitCollectionEditor;
+import com.tahminapp.auth.configuration.AuthorityPropertyEditor;
+import com.tahminapp.auth.configuration.SplitCollectionEditor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.GrantedAuthority;

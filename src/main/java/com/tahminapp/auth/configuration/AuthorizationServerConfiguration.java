@@ -1,4 +1,4 @@
-package com.aak.configuration;
+package com.tahminapp.auth.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
