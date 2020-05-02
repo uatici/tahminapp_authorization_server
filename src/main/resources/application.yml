@@ -13,9 +13,21 @@ spring:
       hibernate:
         ddl-auto: none
       show-sql: true
+    mail:
+      host: smtp.gmail.com
+      port: 465
+      protocol: smtps
+      username: USERNAME@gmail.com
+      password: PASSWORD
+      properties:
+        mail:
+          smtps:
+            auth: true
+            timeout: 8000
+            starttls:
+              enable: true
+          transport:
+            protocol: smtps
 # --- server
 server:
   port: 8081
-
-
-

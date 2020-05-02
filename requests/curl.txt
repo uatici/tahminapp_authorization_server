@@ -1,0 +1,10 @@
+ 1304  curl -s -u curl_client:user -X POST localhost:8081/oauth/token\?grant_type=client_credentials
+ 1306  curl -s -u curl_client:user -X POST localhost:8081/oauth/token\?grant_type=client_credentials
+ 1307  curl -u curl_client:user "http://localhost:8081/oauth/token" -d 'grant_type=password&username=oauth_admin&password=user'
+ 1308  curl -u ufuk:ufuk "http://localhost:8081/oauth/token" -d 'grant_type=refresh_token&username=oauth_admin&password=user'
+ 1309  curl -u ufuk:user "http://localhost:8081/oauth/token" -d 'grant_type=password&username=oauth_admin&password=user'
+ 1310  curl -u ufuk:user "http://localhost:8081/oauth/token" -d 'grant_type=client_credentials'
+ 1311  curl -u ufuk:user "http://localhost:8081/oauth/token" -d 'grant_type=refresh_token&refresh_token=a398a9e3-227c-4051-86cb-982f3a3eb408'
+ 1312  curl -u ufuk:user "http://localhost:8081/oauth/token" -d 'grant_type=password&username=oauth_admin&password=user'
+ 1313  curl -u ufuk:user "http://localhost:8081/oauth/token" -d 'grant_type=refresh_token&refresh_token=c10f74bf-260f-4e97-8f9d-ff15680bd982'
+ 1314  curl -u ufuk:user "http://localhost:8081/oauth/token" -d 'grant_type=client_credentials'

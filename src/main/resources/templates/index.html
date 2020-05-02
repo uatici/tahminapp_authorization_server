@@ -39,7 +39,9 @@
                     <td th:value="${app.scope}"></td>
                     <td>
                         <form action="/approval/revoke" method="POST">
+                            <!--
                             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                            -->
                             <input type="hidden" name="userId" th:value="${app.userId}"/>
                             <input type="hidden" name="clientId" th:value="${app.clientId}"/>
                             <input type="hidden" name="scope" th:value="${app.scope}"/>

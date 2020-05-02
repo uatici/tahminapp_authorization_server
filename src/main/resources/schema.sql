@@ -2,13 +2,13 @@ drop table if exists oauth_client_token;
 drop table if exists oauth_client_details;
 drop table if exists oauth_access_token;
 drop table if exists oauth_refresh_token;
+drop table if exists verification_token;
+drop table if exists user_authority;
 drop table if exists authority;
 drop table if exists user;
 drop table if exists user_status;
-drop table if exists user_authorities;
 drop table if exists oauth_code;
 drop table if exists oauth_approvals;
-
 
 create table oauth_client_token (
   token_id VARCHAR(255),
@@ -17,7 +17,6 @@ create table oauth_client_token (
   user_name VARCHAR(255),
   client_id VARCHAR(255)
 );
-
 
 CREATE TABLE oauth_client_details (
   client_id varchar(255) NOT NULL,
@@ -33,8 +32,7 @@ CREATE TABLE oauth_client_details (
   autoapprove varchar(255) DEFAULT NULL
 );
 
-
-create table `oauth_access_token` (
+create table oauth_access_token (
   token_id VARCHAR(255),
   token LONGBLOB,
   authentication_id VARCHAR(255),
@@ -44,16 +42,14 @@ create table `oauth_access_token` (
   refresh_token VARCHAR(255)
 );
 
-
-create table `oauth_refresh_token`(
+create table oauth_refresh_token(
   token_id VARCHAR(255),
   token LONGBLOB,
   authentication LONGBLOB
 );
 
-
 CREATE TABLE authority (
-  id  integer,
+  id  int auto_increment,
   authority varchar(255),
   primary key (id)
 );
@@ -66,7 +62,7 @@ CREATE table user_status
 
 create table user
 (
-	id int primary key,
+	id bigint primary key auto_increment,
 	user_name varchar(255) not null,
 	email varchar(255) not null,
 	password varchar(255) not null,
@@ -78,16 +74,27 @@ create table user
 	constraint unique_username_and_email unique (user_name,email)
 );
 
-CREATE TABLE user_authorities (
-  user_id bigint not null,
-  authorities_id bigint not null
+CREATE TABLE user_authority (
+    user_id bigint not null,
+	authority_id int not null,
+	constraint user_authority_authority_id_fk
+		foreign key (authority_id) references oauth2.authority (id),
+	constraint user_authority_user_id_fk
+		foreign key (user_id) references oauth2.user (id)
 );
 
+create table verification_token
+(
+  id bigint auto_increment primary key,
+  token varchar(255) not null,
+  user_id bigint not null,
+  expiry_date datetime not null,
+  constraint fk_verify_user foreign key (user_id) references oauth2.user (id)
+);
 
 create table oauth_code (
   code VARCHAR(255), authentication VARBINARY(255)
 );
-
 
 create table oauth_approvals (
     userId VARCHAR(255),

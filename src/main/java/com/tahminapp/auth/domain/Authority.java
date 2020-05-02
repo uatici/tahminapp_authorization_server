@@ -17,7 +17,7 @@ public class Authority implements GrantedAuthority,Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String authority;
@@ -29,6 +29,14 @@ public class Authority implements GrantedAuthority,Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public Authority() {}
+
+    public Authority (Long id, String authority) {
+        this.id = id;
+        this.authority = authority;
+    }
+
 
     @Override
     public String getAuthority() {

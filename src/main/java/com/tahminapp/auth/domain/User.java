@@ -5,16 +5,12 @@ import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by ahmed on 21.5.18.
- */
-
 @Entity
 @Table(name ="user")
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotEmpty
@@ -35,9 +31,23 @@ public class User implements Serializable {
     private UserStatus status;
 
     @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_authority",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "authority_id"))
     private List<Authority> authorities;
 
+    public  User() {}
 
+    public User(String userName , String email, String password , String name , String surname, UserStatus status, List<Authority> authorities) {
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.status = status;
+        this.authorities = authorities;
+    }
 
     public Long getId() {
         return id;

@@ -1,4 +1,4 @@
-package com.tahminapp.auth.api;
+package com.tahminapp.auth.controller;
 
 import com.tahminapp.auth.configuration.AuthorityPropertyEditor;
 import com.tahminapp.auth.configuration.SplitCollectionEditor;
