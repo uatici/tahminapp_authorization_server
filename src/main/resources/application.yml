@@ -4,8 +4,9 @@ spring:
             connection-test-query: SELECT 1 FROM DUAL
             minimum-idle: 1
             maximum-pool-size: 5
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         jdbc-url: jdbc:mysql://localhost:3306/oauth2?useSSL=false
+        url: jdbc:mysql://localhost:3306/oauth2?useSSL=false
         username: root
         password: Etr12345
         initialization-mode: always
@@ -28,6 +29,8 @@ spring:
               enable: true
           transport:
             protocol: smtps
+    main:
+      allow-bean-definition-overriding: true
 # --- server
 server:
   port: 8081

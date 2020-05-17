@@ -20,7 +20,7 @@ public class JdbcUserDetails implements UserDetailsService{
     public UserDetails loadUserByUsername(String userNameOrEmail) throws UsernameNotFoundException {
         User user = userRepository.findByUserNameOrEmail(userNameOrEmail,userNameOrEmail);
         if(user==null){
-            throw new UsernameNotFoundException("User"+userNameOrEmail+"can not be found");
+            throw new UsernameNotFoundException("User "+userNameOrEmail+" can not be found");
         }
         org.springframework.security.core.userdetails.User authUser = new org.springframework.security.core.userdetails.User(user.getName(),user.getPassword(),user.getStatus() == UserStatus.ENABLE,true,true,true,user.getAuthorities());
         return  authUser;

@@ -93,7 +93,7 @@ create table verification_token
 );
 
 create table oauth_code (
-  code VARCHAR(255), authentication VARBINARY(255)
+  code VARCHAR(255), authentication BLOB
 );
 
 create table oauth_approvals (
