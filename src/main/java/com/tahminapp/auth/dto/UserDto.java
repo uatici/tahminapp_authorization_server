@@ -2,18 +2,16 @@ package com.tahminapp.auth.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tahminapp.auth.domain.Authority;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.tahminapp.auth.service.TranslatorService;
+import lombok.*;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDto {
@@ -22,8 +20,10 @@ public class UserDto {
     @NotEmpty
     private String userName;
 
+
     @NotNull
     @NotEmpty
+    @Email
     private String email;
 
     @NotNull

@@ -10,27 +10,32 @@ spring:
         username: root
         password: Etr12345
         initialization-mode: always
+
     jpa:
       hibernate:
         ddl-auto: none
       show-sql: true
+
     mail:
-      host: smtp.gmail.com
-      port: 465
-      protocol: smtps
-      username: USERNAME@gmail.com
-      password: PASSWORD
+      host: localhost
+      port: 25
+      protocol: smtp
+#      username: USERNAME@gmail.com
+#      password: PASSWORD
       properties:
         mail:
           smtps:
-            auth: true
+            auth: false
             timeout: 8000
-            starttls:
-              enable: true
+#            starttls:
+#              enable: true
           transport:
             protocol: smtps
+
     main:
       allow-bean-definition-overriding: true
 # --- server
 server:
   port: 8081
+support:
+  mail: tahminApp
